@@ -10,13 +10,16 @@ echo "✨ This will interactively install my personal dotfiles"
 echo "🔧 Includes configs for fish, Hyprland, Neovim, and more"
 echo ""
 
-# Simple confirmation
-read -p "🚀 Ready to install? (y/N): " -n 1 -r
-echo ""
-
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-    echo "❌ Installation cancelled"
-    exit 0
+# Simple confirmation (works when piped or run locally)
+if [ -t 0 ]; then
+    read -p "🚀 Ready to install? (y/N): " -n 1 -r
+    echo ""
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        echo "❌ Installation cancelled"
+        exit 0
+    fi
+else
+    echo "⚠️  Non-interactive mode detected (piped install); proceeding..."
 fi
 
 echo ""
