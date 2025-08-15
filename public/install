@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Str1ke's Dotfiles - Interactive Installer
+# curl -fsSL https://str1ke.codes/install | bash
+
+echo ""
+echo "🎨 Str1ke's Dotfiles Installer"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+echo "✨ This will interactively install my personal dotfiles"
+echo "🔧 Includes configs for fish, Hyprland, Neovim, and more"
+echo ""
+
+# Simple confirmation
+read -p "🚀 Ready to install? (y/N): " -n 1 -r
+echo ""
+
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    echo "❌ Installation cancelled"
+    exit 0
+fi
+
+echo ""
+echo "📦 Downloading and running installer..."
+echo ""
+
+# Call main installer with interactive mode (no verbose for cleaner output)
+curl -fsSL https://raw.githubusercontent.com/RealStr1ke/dotfiles/master/install.sh | bash -s -- --interactive
+
+echo ""
+echo "🎉 Installation complete! Enjoy your new dotfiles!"
+echo "💡 Run 'dotfiles help' for available commands"
