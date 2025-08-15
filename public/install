@@ -31,4 +31,4 @@ curl -fsSL https://raw.githubusercontent.com/RealStr1ke/dotfiles/master/install.
 
 echo ""
 echo "🎉 Installation complete! Enjoy your new dotfiles!"
-echo "💡 Run 'dotfiles help' for available commands"
+echo "💡 Run 'dots help' for available commands"
